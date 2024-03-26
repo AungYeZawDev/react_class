@@ -1,37 +1,69 @@
-import './App.css';
-import { useState } from 'react';
+import React, { useState } from "react";
 
 function App() {
-  const [userDetails, setUserDetails] = useState({
-    userName: {
-      firstName: "John",
-      lastName: "Doe",
-    },
-    age: 20,
-    hobby: "Reading",
-  });
-  const changeName = () => {
-    setUserDetails({
-      ...userDetails,
-      userName: {
-        ...userDetails.userName,
-        firstName: "Jane",
-      },
-    });
-  };
-  return (
-    <div>
-      <h1>
-        Hello {userDetails.userName.firstName} {userDetails.userName.lastName},
 
-      </h1>
-      <p>
-        {userDetails.age} || {userDetails.hobby}
-      </p>
-      <button onClick={changeName}>Change Name</button>
+  const list = [
+
+    "Banana",
+
+    "Apple",
+
+    "Orange",
+
+    "Mango",
+
+    "Pineapple",
+
+    "Watermelon"
+
+  ];
+
+  const [filterList, setFilterList] = useState(list);
+
+  const handleSearch = (event) => {
+
+    if (event.target.value === "") {
+
+      setFilterList(list);
+
+      return;
+
+    }
+
+    const filteredValues = list.filter(
+
+      (item) =>
+
+        item.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
+
+    );
+
+    setFilterList(filteredValues);
+
+  };
+
+  return (
+
+    <div>
+
+      <div>
+
+        Search: <input name="query" type="text" onChange={handleSearch} />
+
+      </div>
+
+      {filterList &&
+
+        filterList.map((item, index) => (
+
+          <div key={index}>{item}</div> //Display each item
+
+        ))}
+
     </div>
+
   );
 
-};
+}
 
 export default App;
