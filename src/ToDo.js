@@ -1,3 +1,5 @@
+import React from "react";
+
 const Todo = ({ todos }) => {
     console.log("child render");
     return (

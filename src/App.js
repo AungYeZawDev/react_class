@@ -1,36 +1,31 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-import Todos from "./ToDo";
+import "./App.css";
+
+import Header from "./Header";
 
 const App = () => {
 
-  const [count, setCount] = useState(0);
+  console.log("Rendering Form");
 
-  const [todos, setTodos] = useState(["todo 1", "todo 2"]);
-
-  const increment = () => {
-
-    setCount((c) => c + 1);
-
-  };
+  const [name, setName] = useState("");
 
   return (
 
-    <>
+    <div className="App">
 
-      <Todos todos={todos} />
+      <Header title="Input Field" />
 
-      <hr />
+      <input
 
-      <div>
+        type="text"
 
-        Count: {count}
+        value={name}
 
-        <button onClick={increment}>+</button>
+        onChange={(e) => setName(e.target.value)}
+      />
 
-      </div>
-
-    </>
+    </div>
 
   );
 
