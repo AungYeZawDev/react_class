@@ -1,18 +1,34 @@
 import { useState } from "react";
 
+import Todos from "./ToDo";
+
 const App = () => {
 
-  const [count, setCounter] = useState(0);
+  const [count, setCount] = useState(0);
+
+  const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+
+  const increment = () => {
+
+    setCount((c) => c + 1);
+
+  };
 
   return (
 
     <>
 
-      <button onClick={() => setCounter(count + 1)}> Increment by 1 </button> <br /><br />
+      <Todos todos={todos} />
 
-      <button onClick={() => setCounter(count - 1)}> Decrement by 1 </button> <br /><br />
+      <hr />
 
-      <h2>{count}</h2>
+      <div>
+
+        Count: {count}
+
+        <button onClick={increment}>+</button>
+
+      </div>
 
     </>
 
