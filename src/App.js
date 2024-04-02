@@ -75,11 +75,43 @@ const EmployeeForm = ({ onSubmit }) => {
 
 // Employee List Component
 const EmployeeList = ({ employees }) => {
+  const [filter, setFilter] = useState({ id: '', name: '' });
+
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilter({ ...filter, [name]: value });
+  };
+
+  const filteredEmployees = employees.filter(employee => {
+    return (
+      employee.id.toString().includes(filter.id) &&
+      employee.name.toLowerCase().includes(filter.name.toLowerCase())
+    );
+  });
+
   return (
     <div className="list-container">
       <h2>Employee List</h2>
+      <div className="filter-container">
+        <input
+          type="text"
+          name="id"
+          value={filter.id}
+          onChange={handleFilterChange}
+          placeholder="Filter by ID"
+          className="filter-input"
+        />
+        <input
+          type="text"
+          name="name"
+          value={filter.name}
+          onChange={handleFilterChange}
+          placeholder="Filter by Name"
+          className="filter-input"
+        />
+      </div>
       <ul>
-        {employees.map((employee, index) => (
+        {filteredEmployees.map((employee, index) => (
           <li key={index}>
             {employee.id} - {employee.name} - {employee.phone} - {employee.email}
           </li>

@@ -170,3 +170,20 @@ input[type="email"]:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+.filter-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.filter-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.filter-input::placeholder {
+  color: #aaa;
+}
