@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -43,18 +44,129 @@
 }
 
 .centered-form {
-  width: 300px; /* Set the width of the form */
-  padding: 20px; /* Add padding around the form */
+  width: 300px;
+  /* Set the width of the form */
+  padding: 20px;
+  /* Add padding around the form */
 }
 
 .centered-form label {
-  display: block; /* Ensure labels are displayed as blocks */
-  margin-bottom: 5px; /* Add some space below each label */
+  display: block;
+  /* Ensure labels are displayed as blocks */
+  margin-bottom: 5px;
+  /* Add some space below each label */
 }
 
 .centered-form input,
 .centered-form textarea {
-  width: calc(100% - 10px); /* Make inputs and textareas fill the available space */
-  margin-bottom: 10px; /* Add some space below each input */
+  width: calc(100% - 10px);
+  /* Make inputs and textareas fill the available space */
+  margin-bottom: 10px;
+  /* Add some space below each input */
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.form-container {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.form-container textarea {
+  height: 100px;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.list-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.list-container h2 {
+  margin-top: 0;
+}
+
+.list-container ul {
+  padding: 0;
+}
+
+.list-container ul li {
+  margin-bottom: 5px;
+}
+
+.list-container ul li:last-child {
+  margin-bottom: 0;
+}
+
+.phone-email-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="tel"],
+input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="tel"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
